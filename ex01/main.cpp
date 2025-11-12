@@ -6,7 +6,7 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:27:32 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/12 18:34:32 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/12 18:35:58 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(void) {
     std::cout << f;
 
   } catch (const std::exception &e) {
-    std::cout << "Exception : " << e.what() << std::endl;
+    std::cout << "Exception   pout test: " << e.what() << std::endl;
   }
 
   return (0);
