@@ -6,7 +6,7 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:27:32 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/12 18:35:58 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/12 18:43:53 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@ int main(void) {
 
   try {
     Bureaucrat test("Killian", 1);
-    Form f("Contrat Cdi", 100, 10);
-    test.signForm(f);
-    std::cout << f;
+    Form teest("Contrat Cdi", 100, 10);
+    test.signForm(teest);
+    std::cout << teest;
 
   } catch (const std::exception &e) {
     std::cout << "Exception : " << e.what() << std::endl;
   }
   try {
-    Bureaucrat t("Aniss", 1);
+    Bureaucrat t("Anisswdqwqdwqddwqqwddqwqwd", 1);
     Form f("Contrat", 100, 10);
+    t.promotion();
     t.signForm(f);
     std::cout << f;
 
