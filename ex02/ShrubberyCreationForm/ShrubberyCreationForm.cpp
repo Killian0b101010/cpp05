@@ -1,28 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 16:27:32 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/13 16:28:29 by kiteixei         ###   ########.fr       */
+/*   Created: 2025/11/13 15:28:02 by kiteixei          #+#    #+#             */
+/*   Updated: 2025/11/13 18:06:18 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ShrubberyCreationForm.hpp"
 
-#include "AForm/AForm.hpp"
-#include "Bureaucrat/Bureaucrat.hpp"
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
+    : AForm("ShruberryCreationForm", 145, 137) {}
 
-int main(void) {
-
-  try {
-    Bureaucrat Kln("Killlian", 110);
-    AForm cdi("Contrat CDI", 100, 10);
-    Kln.signForm(cdi);
-    std::cout << cdi;
-
-  } catch (const std::exception &e) {
-    std::cout << "Exception : " << e.what() << std::endl;
-  }
-  return (0);
-}
+void ::ShrubberyCreationForm(const Bureaucrat &b) { if }
