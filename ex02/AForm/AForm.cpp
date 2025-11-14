@@ -6,7 +6,7 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:40:53 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/13 16:28:19 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/14 15:33:48 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ const char *AForm::GradeTooHighException::what() const throw() {
 
   return ("Grade Too High.");
 }
-
+const char *AForm::FormNotSignedException::what() const throw() {
+  return ("Form Not Signed.");
+}
 AForm::~AForm() { std::cout << "Destructor called" << std::endl; }
 
 std::string const &AForm::getName() const { return (_Name); }

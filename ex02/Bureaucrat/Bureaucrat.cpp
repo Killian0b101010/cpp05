@@ -6,12 +6,12 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:28:21 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/12 16:51:59 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/14 16:36:18 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "../Form/Form.hpp"
+#include "../AForm/AForm.hpp"
 
 Bureaucrat::Bureaucrat() {
   std::cout << "Bureaucrat constructor default called" << std::endl;
@@ -60,7 +60,7 @@ const char *Bureaucrat::GradeTooHighException::what() const throw() {
   return ("Grade Too High.");
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
   try {
     form.beSigned(*this);
     std::cout << Name << " signed " << form.getName() << std::endl;

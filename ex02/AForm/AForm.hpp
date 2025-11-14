@@ -6,7 +6,7 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:41:03 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/13 18:06:15 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/14 15:33:40 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ public:
     virtual const char *what() const throw();
   };
   class GradeTooLowException : public std::exception {
+  public:
+    virtual const char *what() const throw();
+  };
+  class FormNotSignedException : public std::exception {
   public:
     virtual const char *what() const throw();
   };
