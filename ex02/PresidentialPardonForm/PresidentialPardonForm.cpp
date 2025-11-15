@@ -1,58 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 15:28:02 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/14 16:07:39 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:35:16 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
-#include <fstream>
+#include "PresidentialPardonForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm()
-    : _target("Default"), AForm("ShrubberyCreationForm", 145, 137) {}
+PresidentialPardonForm::PresidentialPardonForm()
+    : AForm("PresidentialPardonForm", 25, 5), _target("default") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string &target)
-    : AForm("ShruberryCreationForm", 145, 137) {}
+PresidentialPardonForm::PresidentialPardonForm(std::string target)
+    : AForm("PresidentialPardonForm", 25, 5), _target(target) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &cpy)
+PresidentialPardonForm::PresidentialPardonForm(
+    const PresidentialPardonForm &cpy)
     : AForm(cpy), _target(cpy._target) {}
 
-ShrubberyCreationForm &
-ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
+PresidentialPardonForm &
+PresidentialPardonForm::operator=(const PresidentialPardonForm &other) {
   if (this != &other)
     _target = other._target;
   return (*this);
 }
-std::string ShrubberyCreationForm ::getTarget() const { return _target; }
 
-void ShrubberyCreationForm ::execute(const Bureaucrat &b) {
+std::string PresidentialPardonForm::getTarget() const { return _target; }
+
+void PresidentialPardonForm::execute(const Bureaucrat &b) {
   if (gradeToSign() == false)
     throw AForm::FormNotSignedException();
   if (b.getGrade() > gradeToExecute())
     throw AForm::GradeTooLowException();
-  std::string filename = _target + "_shrubbery";
-  std::ofstream out(filename.c_str());
-
-  if (!out) {
-    std::cerr << "Error: could not open file " << filename << std::endl;
-    return;
-  }
-  out << "      /\\\n";
-  out << "     /**\\\n";
-  out << "    /****\\\n";
-  out << "   /******\\\n";
-  out << "  /********\\\n";
-  out << "      ||\n";
-  out << "      ||\n";
-  out.close();
+  std::cout << "Informs that " << _target
+            << "has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
+PresidentialPardonForm ::~PresidentialPardonForm() {}
 
-std::ostream &operator<<(std::ostream &st, ShrubberyCreationForm &s) {
+std::ostream &operator<<(std::ostream &st, PresidentialPardonForm &s) {
   st << s.getName() << std::endl;
   st << s.gradeToExecute() << std::endl;
   st << s.gradeToSign() << std::endl;

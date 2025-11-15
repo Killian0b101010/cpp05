@@ -1,6 +1,9 @@
 NAME = main 
 SRC = Bureaucrat/Bureaucrat.cpp \
-			Form/Form.cpp \
+			AForm/AForm.cpp \
+			PresidentialPardonForm/PresidentialPardonForm.cpp \
+			RobotomyRequestForm/RobotomyRequestForm.cpp \
+			ShrubberyCreationForm/ShrubberyCreationForm.cpp \
 			main.cpp 
 
 OBJ = $(SRC:.cpp=.o)

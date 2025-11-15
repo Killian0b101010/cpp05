@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 16:25:34 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/14 16:05:06 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:24:19 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-#define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 #include "../AForm/AForm.hpp"
 #include "../Bureaucrat/Bureaucrat.hpp"
 #include <iostream>
 #include <string>
 
 class Bureaucrat;
-class ShrubberyCreationForm : public AForm {
+class PresidentialPardonForm : public AForm {
 private:
   std::string _target;
 
 public:
-  ShrubberyCreationForm();
-  ShrubberyCreationForm(std::string &target);
-  ShrubberyCreationForm(const ShrubberyCreationForm &cpy);
-  ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
-  ~ShrubberyCreationForm();
+  PresidentialPardonForm();
+  PresidentialPardonForm(std::string target);
+  PresidentialPardonForm(const PresidentialPardonForm &cpy);
+  PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
+  ~PresidentialPardonForm();
   void execute(const Bureaucrat &b);
   std::string getTarget() const;
 };
 #endif
 
-std::ostream &operator<<(std::ostream &st, ShrubberyCreationForm &s);
+std::ostream &operator<<(std::ostream &st, PresidentialPardonForm &s);

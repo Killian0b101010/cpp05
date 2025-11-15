@@ -6,7 +6,7 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 16:25:34 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/14 16:05:06 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:25:08 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 
 public:
   ShrubberyCreationForm();
-  ShrubberyCreationForm(std::string &target);
+  ShrubberyCreationForm(std::string target);
   ShrubberyCreationForm(const ShrubberyCreationForm &cpy);
   ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
   ~ShrubberyCreationForm();

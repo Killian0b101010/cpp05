@@ -6,7 +6,7 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:40:53 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/14 15:33:48 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/14 19:02:01 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 AForm::AForm() : _Name("Aniss"), _gradeToSigne(30), _gradeToExecute(25) {
   _signed = false;
-  std::cout << "Default constructor" << std::endl;
 }
 
 AForm::AForm(const AForm &copy)

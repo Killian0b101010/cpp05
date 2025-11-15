@@ -6,7 +6,7 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:28:21 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/14 16:36:18 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:18:17 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,16 @@ const char *Bureaucrat::GradeTooHighException::what() const throw() {
 void Bureaucrat::signForm(AForm &form) {
   try {
     form.beSigned(*this);
+    std::cout << Name << " signed " << form.getName() << std::endl;
+  } catch (std::exception &e) {
+    std::cout << Name << " couldn’t sign " << form.getName()
+              << " because bureaucrat is lvl " << getGrade() << " contract lvl "
+              << form.gradeToSign() << " " << e.what() << std::endl;
+  }
+}
+void Bureaucrat::executForm(AForm &form) {
+  try {
+    form.execute(*this);
     std::cout << Name << " signed " << form.getName() << std::endl;
   } catch (std::exception &e) {
     std::cout << Name << " couldn’t sign " << form.getName()

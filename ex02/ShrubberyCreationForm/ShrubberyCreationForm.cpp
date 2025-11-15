@@ -6,7 +6,7 @@
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 15:28:02 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/14 16:07:39 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:33:11 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-    : _target("Default"), AForm("ShrubberyCreationForm", 145, 137) {}
+    : AForm("ShrubberyCreationForm", 145, 137), _target("default") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string &target)
-    : AForm("ShruberryCreationForm", 145, 137) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
+    : AForm("ShruberryCreationForm", 145, 137), _target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &cpy)
     : AForm(cpy), _target(cpy._target) {}
@@ -51,7 +51,7 @@ void ShrubberyCreationForm ::execute(const Bureaucrat &b) {
   out << "      ||\n";
   out.close();
 }
-
+ShrubberyCreationForm::~ShrubberyCreationForm() {}
 std::ostream &operator<<(std::ostream &st, ShrubberyCreationForm &s) {
   st << s.getName() << std::endl;
   st << s.gradeToExecute() << std::endl;

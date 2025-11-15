@@ -1,58 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kiteixei <kiteixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 15:28:02 by kiteixei          #+#    #+#             */
-/*   Updated: 2025/11/14 16:07:39 by kiteixei         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:34:31 by kiteixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
-#include <fstream>
+#include "RobotomyRequestForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm()
-    : _target("Default"), AForm("ShrubberyCreationForm", 145, 137) {}
+RobotomyRequestForm::RobotomyRequestForm()
+    : AForm("RobotomyRequestForm", 72, 45), _target("default") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string &target)
-    : AForm("ShruberryCreationForm", 145, 137) {}
+RobotomyRequestForm::RobotomyRequestForm(std::string target)
+    : AForm("RobotomyRequestForm", 72, 45), _target(target) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &cpy)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &cpy)
     : AForm(cpy), _target(cpy._target) {}
 
-ShrubberyCreationForm &
-ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
+RobotomyRequestForm &
+RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
   if (this != &other)
     _target = other._target;
   return (*this);
 }
-std::string ShrubberyCreationForm ::getTarget() const { return _target; }
+std::string RobotomyRequestForm ::getTarget() const { return _target; }
 
-void ShrubberyCreationForm ::execute(const Bureaucrat &b) {
-  if (gradeToSign() == false)
-    throw AForm::FormNotSignedException();
+void RobotomyRequestForm::execute(const Bureaucrat &b) {
+  time_t timestamp;
+  time(&timestamp);
+  struct tm *timeInfos = localtime(&timestamp);
   if (b.getGrade() > gradeToExecute())
     throw AForm::GradeTooLowException();
-  std::string filename = _target + "_shrubbery";
-  std::ofstream out(filename.c_str());
-
-  if (!out) {
-    std::cerr << "Error: could not open file " << filename << std::endl;
-    return;
-  }
-  out << "      /\\\n";
-  out << "     /**\\\n";
-  out << "    /****\\\n";
-  out << "   /******\\\n";
-  out << "  /********\\\n";
-  out << "      ||\n";
-  out << "      ||\n";
-  out.close();
+  std::cout << "* BZZZZZZZZZZZZZ *" << std::endl;
+  std::cout << "* Drrrrrr Drrrrrr *" << std::endl;
+  if (timeInfos->tm_hour % 2 == 0)
+    std::cout << getTarget() << "has been robotomized successfully"
+              << std::endl;
+  else
+    std::cout << "The robotomi failld";
 }
 
-std::ostream &operator<<(std::ostream &st, ShrubberyCreationForm &s) {
+RobotomyRequestForm::~RobotomyRequestForm() {}
+std::ostream &operator<<(std::ostream &st, RobotomyRequestForm &s) {
   st << s.getName() << std::endl;
   st << s.gradeToExecute() << std::endl;
   st << s.gradeToSign() << std::endl;
