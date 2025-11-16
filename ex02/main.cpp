@@ -47,6 +47,8 @@ int main(void) {
     std::cout << GREEN BOLD "🎅 Grade too low to sign all forms" RESET
               << std::endl;
     c.signForm(s1);
+    c.signForm(s1);
+    c.signForm(r1);
     c.signForm(r1);
     c.signForm(p1);
 
